@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 
-
-
 function NoticiaDestaque() {
-
   const [tituloNoticia, setTituloNoticia] = useState(null);
-  
+
   // Função para fazer a requisição à API da IBGE
   async function fetchNoticiaDestaque() {
     try {
@@ -15,7 +12,6 @@ function NoticiaDestaque() {
       const data = await response.json();
       const primeiraNoticia = data.items[0].titulo; // Pega a primeira notícia de destaque
       setTituloNoticia(primeiraNoticia);
-
     } catch (error) {
       console.error("Erro ao obter notícia de destaque:", error);
     }

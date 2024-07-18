@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function ListaDeItens() {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const [lista, setLista] = useState([]);
 
   const handleInputChange = (event) => {
@@ -9,21 +9,23 @@ function ListaDeItens() {
   };
 
   const adicionarItem = () => {
-    if (inputValue.trim() !== '') {
+    if (inputValue.trim() !== "") {
       setLista([...lista, inputValue]);
-      setInputValue('');
+      setInputValue("");
     }
   };
 
   return (
-    <div style={{alignItems:'center', marginLeft:15}}>
+    <div style={{ alignItems: "center", marginLeft: 15 }}>
       <input
         type="text"
         value={inputValue}
         onChange={handleInputChange}
         placeholder="Digite um item"
       />
-      <button onClick={adicionarItem} style= {{marginLeft: 15}}>Adicionar</button>
+      <button onClick={adicionarItem} style={{ marginLeft: 15 }}>
+        Adicionar
+      </button>
 
       {lista.length > 0 && (
         <ul>
